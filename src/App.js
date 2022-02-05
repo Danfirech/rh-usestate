@@ -10,6 +10,9 @@ const App = () => {
     count3: 30,
   });
 
+  const [email, setEmail] = useState("");
+  const [password, setpassword] = useState("");
+
   return (
     <>
       <div>
@@ -35,6 +38,22 @@ const App = () => {
         </button>
         <div>count 2: {count2}</div>
         <div>count 3: {count3}</div>
+      </div>
+
+      <div>
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+
+        <input
+          type="password"
+          name="password"
+          valie={password}
+          onChange={(e) => setpassword(e.target.value)}
+        />
       </div>
     </>
   );
