@@ -5,6 +5,11 @@ const App = () => {
 
   const [subtract, setsubtract] = useState(15);
 
+  const [{ count2, count3 }, setnewcount] = useState({
+    count2: 20,
+    count3: 30,
+  });
+
   return (
     <>
       <div>
@@ -14,6 +19,22 @@ const App = () => {
       <div>
         <button onClick={() => setsubtract(subtract - 1)}>-</button>
         <div>{subtract}</div>
+      </div>
+
+      <div>
+        <button
+          onClick={() =>
+            setnewcount((currentState) => ({
+              ...setnewcount,
+              count2: currentState.count2 + 1,
+              count3: currentState.count3 + 2,
+            }))
+          }
+        >
+          Try Me 1
+        </button>
+        <div>count 2: {count2}</div>
+        <div>count 3: {count3}</div>
       </div>
     </>
   );
