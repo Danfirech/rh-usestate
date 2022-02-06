@@ -23,10 +23,14 @@ const Answer = styled.div`
   color: white;
 `;
 
+const Hello = () => {
+  this.setCount.useState(50);
+};
+
 const App = () => {
   const [count, setCount] = useState(10);
   const [count2, setCount2] = useState(10);
-  const [reset, resetCount] = useState(0);
+  const [reset, reset1] = useState(50);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,11 +42,13 @@ const App = () => {
         <Answer>{count}</Answer>
         <Button onClick={() => setCount2(count2 - 1)}>Minus</Button>
         <Answer>{count2}</Answer>
-        <Button onClick={() => setCount(count == 0)}>Reset</Button>
+        <div>
+          <Button onClick={() => reset1(this.count + 3)}>Reset</Button>
+        </div>
       </ContainerTop>
 
       <ContainerBottom>
-        <input
+        {/* <input
           name="email"
           type="email"
           value={email}
@@ -53,7 +59,7 @@ const App = () => {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        />
+        /> */}
       </ContainerBottom>
     </>
   );
