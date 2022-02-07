@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useForm } from "./useForm";
 
 const ContainerTop = styled.div`
   width: 100vw;
@@ -31,8 +32,7 @@ const App = () => {
   const [count, setCount] = useState(10);
   const [count2, setCount2] = useState(10);
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [values, handleChange] = useForm({ email: "", password: "" });
 
   return (
     <>
@@ -47,14 +47,14 @@ const App = () => {
         <input
           name="email"
           type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={values.email}
+          onChange={handleChange}
         />
         <input
           name="password"
           type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={values.password}
+          onChange={handleChange}
         />
       </ContainerBottom>
     </>
